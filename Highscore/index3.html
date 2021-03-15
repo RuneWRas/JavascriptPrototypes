@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Highscorer</title>
+    <style media="screen">
+      *{
+        margin: auto;
+      }
+
+      body {
+        background: lightgrey;
+      }
+
+      .contain {
+        margin-top: 2vw;
+        border: 2px solid grey;
+        background: white;
+        width: 24.5vw;
+        height: 99vh;
+        font-size: 25px;
+        margin: auto;
+        float: left;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transform:translateZ(0);
+
+      }
+
+      .first {
+        color: red;
+        width: 95%;
+        height: 40px;
+        font-size: 30px;
+        line-height: 40px;
+      }
+
+      .box {
+        width: 95%;
+        min-height: 25px;
+        /*border-top: 1px solid;*/
+        border-bottom: 0.5px solid;
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+      var x = 0;
+      var k = [];
+      window.onload = function () {
+        var scrolldiv = document.getElementsByClassName('contain');
+        for (var i = 0; i < scrolldiv.length; i++) {
+          k.push(new scrldiv());
+          k[i].contain = document.getElementsByClassName('contain')[i];
+          k[i].newbox();
+          k[i].box = k[i].contain.getElementsByClassName('box');
+          k[i].first = k[i].box[0];
+        }
+        setInterval(scroll,1000/60);
+      }
+
+      function scrldiv() {
+        this.contain = 0;
+        this.first   = 0;
+        this.box     = 0;
+        this.top     = 0;
+        this.x       = 0;
+        this.new     = 0;
+
+        this.scro = function () {
+          if (this.contain.scrollTop >= this.first.clientHeight) {
+            this.contain.scrollTop = 0;
+            this.delete();
+            this.newbox();
+          } else {
+            this.contain.scrollTop += 1;
+            if (this.contain.scrollTop == this.top) {
+              console.log("new");
+              this.newbox();
+            }
+            this.top = this.contain.scrollTop;
+          }
+        }
+
+        this.newbox = function () {
+          this.new = document.createElement("div");
+          this.contain.appendChild(this.new);
+          this.new.setAttribute("class", "box");
+          if (this.x == 0) {
+            this.new.setAttribute("class", "box first");
+          }
+          this.new.innerHTML = alpha[this.x];
+          this.x++;
+          if (this.x >= alpha.length) {
+            this.x = 0;
+          }
+        }
+
+        this.delete = function () {
+            this.first.remove();
+            this.first = this.box[0];
+        }
+      }
+
+      function scroll() {
+        for (var i = k.length-1; i >= 0; i--) {
+          k[i].scro();
+        }
+      }
+
+    </script>
+    <div class="contain">
+    </div>
+    <div class="contain">
+    </div>
+    <div class="contain">
+    </div>
+    <div class="contain">
+    </div>
+
+
+
+  </body>
+</html>

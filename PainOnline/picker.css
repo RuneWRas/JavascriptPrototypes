@@ -1,0 +1,38 @@
+#colorpicker {
+  position: relative;
+  background: grey;
+  width: 420px;
+  height: 220px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+
+}
+
+#colorpicker canvas {
+  position: relative;
+  float: left;
+  border: solid 2px wheat;
+}
+
+#hslpick {
+  position: absolute;
+  top: 50px;
+  left: -2.5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: solid 1px white;
+  pointer-events: none;
+}
+
+#illpick {
+  position: absolute;
+  top: 20px;
+  left: -2.5px;
+  width: 30px;
+  height: 10px;
+  border: solid 1px white;
+  pointer-events: none;
+}

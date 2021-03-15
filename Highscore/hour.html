@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+
+      *{
+        margin: 0;
+      }
+
+      #clock {
+        font-family: consolas;
+        width: 100vw;
+        /*max-width: 20vh;*/
+        height: 100vh;
+        text-align: center;
+        line-height: 100vh;
+        font-size: 20vw;
+        /*color: green;*/
+      }
+    </style>
+
+    <script type="text/javascript">
+    var col = false;
+    window.onload = function () {
+      document.getElementById('myAudio').loop = true;
+      setInterval(clock,1000/60);
+    }
+
+function clock() {
+  var d = new Date();
+  var sec = (d.getSeconds() < 10) ? "0"+d.getSeconds() : d.getSeconds();
+  var min = (d.getMinutes() < 10) ? "0"+d.getMinutes() : d.getMinutes();
+  var tim = (d.getHours() < 10)   ? "0"+d.getHours()   : d.getHours();
+
+  document.getElementById('clock').innerHTML = tim + ":" + min + ":" + sec;
+  document.title = tim + ":" + min + ":" + sec;
+  if (min == "00" && sec == "00") {
+    col = false;
+    document.getElementById('myAudio').play();
+  }
+  if (col) {
+    document.getElementById('clock').style.color = "green"
+    document.getElementById('myAudio').pause();
+  }else {
+    document.getElementById('clock').style.color = "red"
+  }
+}
+
+function xxx() {
+  col = true;
+}
+
+    </script>
+  </head>
+  <body>
+    <audio id="myAudio">
+      <source src="C:\Users\Rune\Music\iTunes\iTunes Media\Music\Owl City\The Midsummer Station\02 Shooting Star.mp3" type="audio/mpeg">
+    </audio>
+    <div id="clock" onclick="xxx()">
+    </div>
+
+  </body>
+</html>

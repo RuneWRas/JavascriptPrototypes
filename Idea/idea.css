@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body{
+  height: 100%;
+  -webkit-animation: timer 10s linear infinite;
+          animation: timer 10s linear infinite;
+          overflow: hidden;
+}
+
+
+@keyframes timer {
+  0%  {background-color:hsl(0, 23%, 31%); }
+  20%  {background-color:hsl(72, 23%, 31%); }
+  40%  {background-color:hsl(144, 23%, 31%); }
+  60%  {background-color:hsl(216, 23%, 31%); }
+  80%  {background-color:hsl(288, 23%, 31%); }
+  100%  {background-color:hsl(360, 23%, 31%); }
+}
+
+#full {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap:nowrap;
+}
+
+#real{
+  width: 50vw;
+  height: 62vh;
+}
+
+#tess{
+  width: 60vw;
+  height: 70vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  line-height: 8vh;
+  font-size: 6vh;
+  opacity: 0;
+  overflow-y: scroll;
+  color: white;
+  transition: background 1s;
+}
+
+#tessw{
+  width: 60vw;
+  height: 70vh;
+  overflow: hidden;
+}
+
+#in{
+  opacity: 0.8;
+  line-height: 10vh;
+  font-size: 8vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border: 1vw;
+  color: white;
+  width: 60vw;
+  height: 10vh;
+  background: grey;
+  transition: 2s;
+}
+
+#in:focus {
+    border: 3px solid #555;
+}

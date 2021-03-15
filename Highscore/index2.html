@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Highscorer</title>
+    <style media="screen">
+      *{
+        margin: auto;
+      }
+
+      body {
+        background: lightgrey;
+      }
+
+      .contain {
+        margin-top: 2vw;
+        border: 2px solid grey;
+        background: white;
+        width: 8vw;
+        height: 99vh;
+        font-size: 25px;
+        margin: auto;
+        float: left;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transform:translateZ(0);
+
+      }
+
+      .box {
+        width: 95%;
+        min-height: 25px;
+        /*border-top: 1px solid;*/
+        border-bottom: 1px solid;
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var x = 0;
+      var k = [];
+      window.onload = function () {
+        var scrolldiv = document.getElementsByClassName('contain');
+        for (var i = 0; i < scrolldiv.length; i++) {
+          k.push(new scrldiv());
+          k[i].contain = document.getElementsByClassName('contain')[i];
+          k[i].box = k[i].contain.getElementsByClassName('box');
+          k[i].first = k[i].box[0];
+        }
+        setInterval(scroll,1000/60);
+      }
+
+      function scrldiv() {
+        this.contain = 0;
+        this.first = 0;
+        this.box = 0;
+        this.x = 0;
+
+        this.scro = function () {
+          if (this.contain.scrollTop >= this.first.clientHeight) {
+            this.contain.scrollTop = 0;
+            this.change();
+          } else {
+            this.contain.scrollTop += 1;
+          }
+        }
+
+        this.change = function () {
+          for (var i = 1; i < this.box.length; i++) {
+            this.box[i-1].innerHTML = this.box[i].innerHTML
+          }
+          this.box[this.box.length-1].innerHTML = this.x;
+          this.x++;
+        }
+      }
+
+      function scroll() {
+        for (var i = k.length-1; i >= 0; i--) {
+          k[i].scro();
+        }
+      }
+
+    </script>
+    <div class="contain">
+      <div id="first" class="box">0</div>
+      <div class="box">Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+    <div class="contain">
+      <div id="first" class="box">0</div>
+      <div class="box">Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0
+      Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+    <div class="contain">
+      <div id="first" class="box">0</div>
+      <div class="box">Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+    <div class="contain">
+      <div id="first" class="box">0</div>
+      <div class="box">Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+    <div class="contain">
+      <div id="first" class="box">0</div>
+      <div class="box">Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+    <div class="contain">
+      <div id="first" class="box">0</div>
+      <div class="box">Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+
+    <div class="contain">
+      <div id="first" class="box">0</div>
+      <div class="box">Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+    <div class="contain">
+      <div id="first" class="box">0</div>
+      <div class="box">Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+    <div class="contain">
+      <div id="first" class="box">0</div>
+      <div class="box">Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+    <div class="contain">
+      <div id="first" class="box">0</div>
+      <div class="box">Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+    <div class="contain">
+      <div id="first" class="box">0</div>
+      <div class="box">Sdasdas <br>Sdasdas <br>Sdasdas <br></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">0</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+  </body>
+</html>
